@@ -1,0 +1,117 @@
+<div class="row">
+  <div class="col-sm-4 offset-sm-4">
+    <div class="card card-body">
+      <form [formGroup]="gameForm" (ngSubmit)="edit ? updateGame(game.id) : submitGame()">
+        <div class="form-group">
+          <label for="gameName">Nombre del Juego</label>
+          <input
+            id="gameName"
+            type="text"
+            formControlName="gameName"
+            class="form-control"
+            placeholder="Nombre del Juego"
+            autofocus
+          />
+          <div *ngIf="gameForm.get('gameName')?.invalid && (gameForm.get('gameName')?.dirty || gameForm.get('gameName')?.touched)">
+            <small class="text-danger">Nombre del juego es requerido</small>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Plataforma del Juego</label>
+          <input
+            id="gamingPlatform"
+            type="text"
+            formControlName="gamingPlatform"
+            class="form-control"
+            placeholder="Plataforma de Juego"
+          />
+           <div *ngIf="gameForm.get('gamingPlatform')?.invalid && (gameForm.get('gamingPlatform')?.dirty || gameForm.get('gamingPlatform')?.touched)">
+            <small class="text-danger">Plataforma del juego es requerida</small>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Personaje del Juego</label>
+          <input
+            id="characterUsed"
+            type="text"
+            formControlName="characterUsed"
+            class="form-control"
+            placeholder="Personaje"
+          />
+           <div *ngIf="gameForm.get('characterUsed')?.invalid && (gameForm.get('characterUsed')?.dirty || gameForm.get('characterUsed')?.touched)">
+            <small class="text-danger">Plataforma del juego es requerida</small>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Estudio de Desarrollo</label>
+          <input
+            id="developerStudio"
+            type="text"
+            formControlName="developerStudio"
+            class="form-control"
+            placeholder="Estudio de Desarrollo"
+          />
+          <div *ngIf="gameForm.get('developerStudio')?.invalid && (gameForm.get('developerStudio')?.dirty || gameForm.get('developerStudio')?.touched)">
+            <small class="text-danger">Estudio de Desarrollo es requerido</small>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Puntuación de Juego</label>
+          <input
+            id="highScore"
+            type="text"
+            formControlName="highScore"
+            class="form-control"
+            placeholder="9.80"
+          />
+        </div>
+        <!-- <div class="form-group">
+          <label>Fecha de lanzamiento</label>
+          <input
+            id="releaseDate"
+            type="date"
+            formControlName="releaseDate"
+            class="form-control"
+            placeholder="Fecha de lanzamiento"
+          />
+           <div *ngIf="gameForm.get('releaseDate')?.invalid && (gameForm.get('releaseDate')?.dirty || gameForm.get('releaseDate')?.touched)">
+            <small class="text-danger">La fecha es requerida</small>
+          </div>
+        </div> -->
+        <div class="form-group">
+          <label>Precio de Juego</label>
+          <input
+            id="price"
+            type="number"
+            formControlName="price"
+            class="form-control"
+            placeholder="9.90"
+          />
+          <div *ngIf="gameForm.get('price')?.invalid && (gameForm.get('price')?.dirty || gameForm.get('price')?.touched)">
+            <small class="text-danger">El precio es requerido</small>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Genero del Juego</label>
+          <input
+            id="genre"
+            type="text"
+            formControlName="genre"
+            class="form-control"
+            placeholder="Genero del Juego"
+          />
+        </div>
+        <!-- <div class="form-group">
+          <input
+            type="text"
+            name="imageURL"
+            [(ngModel)]="product.imageURL"
+            class="form-control"
+            placeholder="Image URL"
+          />
+        </div> -->
+        <button type="submit" class="btn btn-primary btn-block">Guardar Juego</button>
+      </form>
+    </div>
+  </div>
+</div>

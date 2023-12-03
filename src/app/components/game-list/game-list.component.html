@@ -1,0 +1,29 @@
+<div *ngFor="let game of games" class="card card-body mb-2">
+  <div class="row">
+    <div class="col-md-8">
+      <ul>
+        <li>id: {{ game.id }}</li>
+        <li>name: {{ game.gameName }}</li>
+        <li>Plataforma: {{ game.gamingPlatform }}</li>
+        <li>description: {{ game.characterUsed }}</li>
+        <li>Estudio: {{ game.developerStudio }}</li>
+        <li>HighScore: {{ game.highScore }}</li>
+        <!-- <li>Fecha Lnazamiento: {{ game.releaseDate }}</li> -->
+        <li>Precio: {{ game.price }}</li>
+        <li>Gender Game: {{ game.genre }}</li>
+      </ul>
+      <button (click)="game.id && deleteGame(game.id)" class="btn btn-danger">
+        Delete
+      </button>
+      <button
+        [routerLink]="['/game/edit', game.id]"
+        class="btn btn-secondary"
+      >
+        Edit
+      </button>
+    </div>
+    <div class="col-md-4">
+      <!-- <img [src]="game.imageURL" class="card-img" /> -->
+    </div>
+  </div>
+</div>
